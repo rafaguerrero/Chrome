@@ -1,0 +1,32 @@
+{
+    "name": "Loki plugin",
+    "version": "1.0",
+    "description": "Fake marfeel into the live domain",
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["/src/background.js"],
+        "persistent": false
+    },
+    "icons": { 
+        "16": "/resources/logo16.png",
+        "48": "/resources/logo48.png",
+       "128": "/resources/logo.png" 
+    },
+    "browser_action": {
+        "default_icon": "/resources/icon.png",
+        "default_title": "Loki Plugin"
+    },
+    "content_scripts": [
+        {
+          "matches": ["http://*/*",  "https://*/*"],
+          "run_at": "document_start",
+          "js": ["/src/garda.js"]
+        }
+    ],
+    "permissions": [
+        "https://*/*",
+        "http://*/*",
+        "tabs",
+        "storage"
+    ]
+  }
