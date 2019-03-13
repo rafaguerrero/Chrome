@@ -1,7 +1,12 @@
 chrome.runtime.onInstalled.addListener(function() {
-    chrome.storage.sync.set({ active: false });
+    chrome.storage.sync.set({ 
+			name1: false, 
+			name2: false, 
+			name3: false, 
+		});
 });
 
+/*
 chrome.browserAction.onClicked.addListener(function (tab) {
 	chrome.storage.sync.get('active', function(data) {
 		var newStatus = !data.active,
@@ -18,3 +23,4 @@ chrome.browserAction.onClicked.addListener(function (tab) {
 		});
     });
 });
+*/
